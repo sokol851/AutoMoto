@@ -12,7 +12,7 @@ router = DefaultRouter()
 router.register(r'cars', CarViewSet, basename='cars')
 
 urlpatterns = [
-    path('moto/create', MotoCreateAPIView.as_view(), name='moto-create'),
+    path('moto/create/', MotoCreateAPIView.as_view(), name='moto-create'),
     path('moto/', MotoListAPIView.as_view(), name='moto-list'),
     path('moto/<int:pk>/', MotoRetrieveAPIView.as_view(), name='moto-detail'),
     path('moto/update/<int:pk>/', MotoUpdateAPIView.as_view(), name='moto-update'),
