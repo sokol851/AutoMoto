@@ -11,7 +11,7 @@ class MilageSerializer(serializers.ModelSerializer):
 
 class CarSerializer(serializers.ModelSerializer):
     last_milage = serializers.IntegerField(source='milage.all.first.milage')
-    milage = MilageSerializer(source='milage', many=True)
+    milage = MilageSerializer(many=True)
 
     class Meta:
         model = Car
