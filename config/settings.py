@@ -195,5 +195,5 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 
-CUR_API_URL = 'https://api.currencyapi.com'
-CUR_API_KEY = 'cur_live_8r9HO3d6PvfkfVCjlP4QftcFwNnSWNbg2Ry2zWnQ'
+CUR_API_URL = config('CUR_API_URL')
+CUR_API_KEY = config('CUR_API_KEY')
