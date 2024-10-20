@@ -1,5 +1,4 @@
 from celery import shared_task
-
 from vehicle.models import Car, Moto
 
 
@@ -20,3 +19,16 @@ def check_milage(pk, model):
                 if prev_milage < m.milage:
                     print('Неверный пробег')
                     break
+
+
+@shared_task
+def check_filter():
+    filter_price = {'amount__lte': 5000}
+    if Car.objects.filter(**filter_price).exists():
+        print('Ответ по фильтру')
+        # send_mail(
+        #     subject="Отчёт по фильтру",
+        #     message='Магины по фильтру',
+        #     from_email='admin@admin.com',
+        #     recipient_list=[user.email]
+        # )
